@@ -104,7 +104,7 @@ class MyStrategy:
         self.market = Market(**cc)
         
         # 60秒执行1次
-        LoopRunTask.register(self.on_ticker, 1)
+        LoopRunTask.register(self.on_ticker, 5)
 
     async def on_ticker(self, *args, **kwargs):
         """ 定时执行任务

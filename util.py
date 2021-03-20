@@ -3,6 +3,7 @@ import pandas as pd
 def get_indicators(klines):
     data = []
     for kline in klines:
+        print(kline)
         data.append({'close': kline.close, 'volume': kline.volume})
     df = pd.DataFrame.from_dict(data)
     df['ema12'] = pd.Series.ewm(df['close'], span=12).mean()
